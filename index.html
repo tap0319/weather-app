@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+    <!--dark/light theme-->
+
+    <div class="theme-toggle">
+      <label>
+      <input type="checkbox" id="theme-switch" />
+      toggle Dark/ligh mode
+    </label>
+    </div>
+
+  <div class="calculator">
+    <input type="text" id="display" disabled />
+    <div class="buttons">
+      <button>7</button><button>8</button><button>9</button><button>/</button>
+      <button>4</button><button>5</button><button>6</button><button>*</button>
+      <button>1</button><button>2</button><button>3</button><button>-</button>
+      <button>0</button><button>C</button><button>=</button><button>+</button>
+    </div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="click-sound" src="sounds/button_click.wav"></audio>
+  <audio id="equal-sound" src="sounds/equal_click.wav"></audio>
+  <audio id="error-sound" src="sounds/error_click.wav"></audio>
+
+
+
+  <!-- Script link -->
+  <script src="script.js"></script>
+
+</body>
+</html>

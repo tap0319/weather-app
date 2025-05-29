@@ -1,0 +1,126 @@
+body {
+  background-color: #3e6c73;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px; /* for small device spacing */
+  box-sizing: border-box;
+}
+
+.calculator {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 320px;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 2rem;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #444;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 16px;
+  font-size: 1.2rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 400px) {
+  .calculator {
+    padding: 15px;
+  }
+
+  #display {
+    font-size: 1.6rem;
+    height: 50px;
+    padding: 8px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+
+/* theme */
+
+:root {
+  --bg-color: #3e6c73;
+  --calculator-bg: #111;
+  --button-bg: #eee;
+  --button-hover: #ddd;
+  --display-bg: #444;
+  --text-color: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calculator {
+  background-color: var(--calculator-bg);
+}
+
+#display {
+  background: var(--display-bg);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: #000;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+/* LIGHT THEME */
+body.light {
+  --bg-color: #d81159;
+  --calculator-bg: #d3a6a6;
+  --button-bg: #333;
+  --button-hover: #444;
+  --display-bg: #ddd;
+  --text-color: #000;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: inherit;
+}
