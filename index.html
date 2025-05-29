@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dark-mode">
+  <canvas id="starCanvas"></canvas>
 
+  <div class="container">
+    <header>
   
-    <!--dark/light theme-->
+  <div class="language-container">
+          <label for="languageSelector">
+           <select id="languageSelector" onchange="changeLanguage()">
+           <option value="en">English</option>
+           <option value="tl">Filipino</option>
+        </select>
+      </div>
 
-    <div class="theme-toggle">
-      <label>
-      <input type="checkbox" id="theme-switch" />
-      toggle Dark/ligh mode
-    </label>
+      <h1>🌤️ Weather App</h1>
+      <button id="toggleMode" onclick="toggleMode()">🌙</button>
+    </header>
+
+    <section class="search">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <section id="historyBox" class="history-box"></section>
+      <button onclick="getWeather()">Search</button>
+      <button onclick="getCurrentLocation()">📍 Use My Location</button>
+    </section>
+
+    <section id="weatherResult" class="weather-box"></section>
+
+    <div id="weatherAnimationContainer">
+      <lottie-player id="weatherAnimation" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
     </div>
 
-  <div class="calculator">
-    <input type="text" id="display" disabled />
-    <div class="buttons">
-      <button>7</button><button>8</button><button>9</button><button>/</button>
-      <button>4</button><button>5</button><button>6</button><button>*</button>
-      <button>1</button><button>2</button><button>3</button><button>-</button>
-      <button>0</button><button>C</button><button>=</button><button>+</button>
-    </div>
+    <section id="forecastBox" class="forecast-box"></section>
+    
+
+    
   </div>
 
-  <!-- Sound Effects -->
-  <audio id="click-sound" src="sounds/button_click.wav"></audio>
-  <audio id="equal-sound" src="sounds/equal_click.wav"></audio>
-  <audio id="error-sound" src="sounds/error_click.wav"></audio>
-
-
-
-  <!-- Script link -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
